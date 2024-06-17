@@ -1,15 +1,15 @@
-nclude <stdio.h>                                                                                                                  
-                                                                                                                                       
-/**                                                                                                                                 
-  * main - Entry point                                                                                                               
-  * Return: Always 0 (Success)                                                                                                       
-  */
+#include <stdio.h>
+
+/**
+* main - Entry point
+* Return: Always 0 (Success)
+*/
 int main(void)
 {
-	Size of a char: 1 byte(s)
-	Size of an int: 4 byte(s)
-	Size of a long int: 8 byte(s)
-	Size of a long long int: 8 byte(s)
-	Size of a float: 4 byte(s)
+	printf("Size of int: %zu bytes\n", sizeof(intType));
+	printf("Size of float: %zu bytes\n", sizeof(floatType));
+	printf("Size of double: %zu bytes\n", sizeof(doubleType));
+	printf("Size of char: %zu byte\n", sizeof(charType));
+	printf("sizeof(long) = %zu\n", sizeof(long));
 	return 0;
 }

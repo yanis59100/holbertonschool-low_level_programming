@@ -4,21 +4,21 @@
 * main - Entry point
 * Return: Always 0 (Success)
 */
-int main(void);
+int main(void)
+int	main(void)
 {
-	int x;
+	int	i = '0';
 
-	for (x = '0'; x <= '9'; x++)
-{
-	putchar(x % 0; (x <= 10) +'0');
-	
-	if (x == 9)
-{
-	putchar(',');
-	putchar(' ');
-}
-}
+	while (i < ':')
+	{
+		putchar(i);
+		if (i != '9')
+		{
+			putchar(',');
+			putchar(' ');
+		}
+		i++;
+	}
 	putchar('\n');
-
 	return (0);
 }

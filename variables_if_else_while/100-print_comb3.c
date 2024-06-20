@@ -8,18 +8,18 @@
 int main(void)
 {
 	int x = '0';
-	int j;
+	int y;
 
 	while (x <= '9')
 	{
 		y = '0';
 		while (y <= '9')
 		{
-		if (i < j)
+		if (x < y)
 		{
-			puchar(x);
+			putchar(x);
 			putchar(y);
-			if (x != '8' | x == '8' && y != '9')
+			if (x != '8' || (x == '8' && y != '9'))
 			putchar(',');
 			putchar(' ');
 		}

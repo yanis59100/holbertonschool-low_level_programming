@@ -5,7 +5,7 @@
  *
  * Return: 0 on success
  */
-void main(void)
+int main(void)
 {
 	int x = '0';
 	int y;
@@ -28,4 +28,5 @@ void main(void)
 	x++;
 	}
 	putchar('\n');
+	return (0);
 }

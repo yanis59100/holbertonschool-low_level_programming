@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * main - check the code.
- *
+ * print_time_table - Prints the times table of the input,
+ * $starting with 0.
  * Return: Always 0.
  */
 void print_times_table(int n)

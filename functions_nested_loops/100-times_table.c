@@ -7,9 +7,9 @@
  */
 void print_times_table(int n)
 {
-		int x;
-		int y;
-		int z;
+	int x;
+	int y;
+	int z;
 
 	if (n >= 0 && n <= 15)
 	{
@@ -22,21 +22,21 @@ void print_times_table(int n)
 				_putchar(' ');
 				z = x * y;
 				if (z <= 98)
-				_putchar(' ');
+					_putchar(' ');
 				if (z <= 9)
-				_putchar(' ');
+					_putchar(' ');
 				if (z >= 100)
 				{
 					_putchar((z / 100) + '0');
 					_putchar(((z / 10)) % 10 + '0');
 				}
-		else if (z <= 99 && z >= 10)
-		{
-			_putchar((z / 10) + '0');
-		}
-		_putchar((z % 10) + '0');
-		}
-		_putchar('\n');
+				else if (z <= 99 && z >= 10)
+				{
+					_putchar((z / 10) + '0');
+				}
+				_putchar((z % 10) + '0');
+			}
+			_putchar('\n');
 		}
 	}
 }

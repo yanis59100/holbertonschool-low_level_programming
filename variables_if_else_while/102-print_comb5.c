@@ -6,24 +6,25 @@
  */
 int main(void)
 {
-	int a;
-	int z;
+	int p, q;
 
-	for (a = 0; a < 98; a++)
+	for (p = 0; p <= 98; p++)
 	{
-		for (z = a + 1; z < 99; z++)
-		{
-			putchar((a / 10) + '0');
-			putchar((a % 10) + '0');
-			putchar(' ');
-			putchar((z / 10) + '0');
-			putchar((z % 10) + '0');
-			if (a == 98 && z == 99)
-			continue;
-			putchar(','),
-			putchar(' ');
-		}
+
+	for (q = p + 1; q <= 99; q++)
+	{
+	putchar((p / 10) + '0');
+	putchar((p % 10) + '0');
+	putchar(' ');
+	putchar((q / 10) + '0');
+	putchar((q % 10) + '0');
+	if (p == 98 && q == 99)
+	continue;
+	putchar(',');
+	putchar(' ');
+	}
 	}
 	putchar('\n');
 	return (0);
+
 }

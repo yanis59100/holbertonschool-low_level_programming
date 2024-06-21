@@ -5,7 +5,7 @@
  *
  * Return: Always 0.
  */
-void print_times_tablet(int n)
+void print_times_table(int n)
 {
 		int x;
 		int y;

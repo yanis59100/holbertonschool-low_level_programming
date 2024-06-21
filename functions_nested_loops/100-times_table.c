@@ -1,4 +1,4 @@
-1#include "main.h"
+#include "main.h"
 
 /**
  * print_times_table - Print the times table of the input,

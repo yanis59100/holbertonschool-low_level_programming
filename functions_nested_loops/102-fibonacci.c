@@ -24,9 +24,9 @@ int main(void)
 			printf("%lu, ", z);
 		}
 
-		a = j;
-		z += i;
-		y = k;
+		a = z;
+		z += y;
+		y = a;
 		x++;
 	}
 

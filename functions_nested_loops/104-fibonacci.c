@@ -1,4 +1,4 @@
-#include <main.h>
+#include <stdio.h>
 #define YANIS 10000000000
 /**
  * main - main block

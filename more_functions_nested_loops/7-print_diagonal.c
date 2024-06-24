@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * print_line - function to print line
+ * print_line - function to print line symbols
  * @n : integer value
  * Return: Always 0.
  */
-void print_line(int n)
+void print_diagonal(int n)
 {
 	int x;
 	int y;

@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_line - function to print line symbols
+ * print_diagonal - function to print line symbols
  * @n : integer value
  * Return: Always 0.
  */
@@ -14,14 +14,14 @@ void print_diagonal(int n)
 	{
 		for (x = 0; x <= n; x++)
 		{
-			for (y = 0; y <= x; y++)
+			for (y = 1; y <= x; y++)
 			{
-			if(y != x)
+				if (y != x)
 				_putchar(' ');
-			else if (y == x)
+				else if (y == x)
 				{
-				_putchar('\\');
-				_putchar('\n');
+					_putchar('\\');
+					_putchar('\n');
 				}
 			}
 		}

@@ -7,8 +7,9 @@
  */
 int _strlen(char *s)
 {
-	char *s;
+	int x;
 
-	strlen(char *s);
-	printf("Longueur : %d\n");
+	for(x = 0; x != '\0'; x++);
+	printf("Lenght of the string: %zu \n, strlen(x)):
+	return (0);
 }

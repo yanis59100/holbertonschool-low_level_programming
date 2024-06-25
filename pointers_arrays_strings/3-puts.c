@@ -10,4 +10,5 @@ void _puts(char *str)
 
 	for (x = 0; x >= 0; x++)
 		_putchar('\n');
+	_putchar(str'x')
 }

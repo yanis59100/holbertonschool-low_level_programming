@@ -1,8 +1,10 @@
 #include <stdio.h>
 
 /**
- * main - check the code Write a function that takes a pointer to an int as parameter and updates  * the value it points to to 98. 
+ * reset_to_98 - funcion with one argument
+ * @n: int type pointer n
  *
+ * Description: using pointer as parameter to update value it points to 98
  * Return: Always 0.
  */
 void reset_to_98(int *n)

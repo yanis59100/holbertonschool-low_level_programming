@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include "main.h"
 /**
  * _puts - returns the length of a string.
  * @str: input string.

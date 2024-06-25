@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - check the code 
+ * main - check the code Write a function that takes a pointer to an int as parameter and updates  * the value it points to to 98. 
  *
  * Return: Always 0.
  */

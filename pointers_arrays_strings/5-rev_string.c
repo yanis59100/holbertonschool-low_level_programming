@@ -6,7 +6,8 @@
  */
 void rev_string(char *s)
 {
-	int x = 0;
+	int x = 0, i, j;
+	char *str, temp;
 
 	while (x >= 0)
 	{
@@ -14,7 +15,15 @@ void rev_string(char *s)
 			break;
 		x++;
 	}
+		str = s;
+		for (i = 0; i < (x -1); i++)
+	{
+			for (j = i + 1; j > 0; j++)
+			{
+			temp = *(str + j);
+			*(str + j) = *(str + (j - 1));
+			*(str + (j - 1)) = temp;
+			}
+	}
 
-	for (x--; x >= 0; x--)
-		_putchar(s[x]);
 }

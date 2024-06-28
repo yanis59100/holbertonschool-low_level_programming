@@ -9,7 +9,7 @@ char *_strcat(char *dest, char *src)
 {
 	int chaine1 = 0, chaine2;
 
-	while ( dest[chaine1])
+	while (dest[chaine1])
 	{
 		chaine1++;
 	}

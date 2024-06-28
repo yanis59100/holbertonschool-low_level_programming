@@ -14,30 +14,25 @@
 
 int _atoi(char *s)
 {
-	int sign = 1;
-	int result = 0;
-	int len = 0;
+	int sign;
+	unsigned int num;
+	char *temp;
 
-	if (s[0] == '-')
+	temp = s;
+	num = 0;
+	sign = 1;
+	while (*temp != '\0' && (*temp < '0' || *temp > '9'))
 	{
-		sign = -1;
-		len++;
+		if (*temp == '-')
+			sign *= -1;
+		temp++;
 	}
-	if (s[0] == '+')
+	if (*temp != '\0')
 	{
-		len++;
+		do {
+			num = num * 10 + (*temp - '0');
+			temp++;
+		} while (*temp >= '0' && *temp <= '9');
 	}
-	while (s[len] != '\0')
-	{
-		if (s[len] >= '0' && s[len] <= '9')
-		{
-			result = result * 10 + (s[len] - '0');
-		}
-		else
-		{
-			break;
-		}
-		len++;
-	}
-	return (sign * result);
+	return (num * sign);
 }

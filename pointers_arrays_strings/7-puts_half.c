@@ -19,4 +19,5 @@ void puts_half(char *str)
 		_putchar(str[lan]);
 	}
 	_putchar(10);
+	_putchar('\n');
 }

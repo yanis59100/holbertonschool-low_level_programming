@@ -9,51 +9,88 @@
  *
  * Return: void
  */
+void printf_char(va_list list)
+{
+	printf("%c", (char) va_arg(list, int));
+}
+
+/**
+ * printf_int - printfs an int from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
+ */
+void printf_int(va_list list)
+{
+	printf("%d", va_arg(list, int));
+}
+
+/**
+ * printf_float - printfs a float from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
+ */
+void printf_float(va_list list)
+{
+	printf("%f", (float) va_arg(list, double));
+}
+
+/**
+ * printf_string - printfs a string from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
+ */
+void printf_string(va_list list)
+{
+	char *str = va_arg(list, char*);
+
+	while (str != NULL)
+	{
+		printf("%s", str);
+		return;
+	}
+	printf("(nil)");
+}
+
+
+/**
+ * print_all - prints various types given a format string for the arguments
+ *
+ * @format: string containing type information for args
+ *
+ * Return: void
+ */
 void print_all(const char * const format, ...)
 {
-    va_list args;
-    int i = 0;
-    char *str;
-    char current_format;
-    int first = 1;
+	const char *ptr;
+	va_list list;
+	funckey key[4] = { {printf_char, 'c'}, {printf_int, 'i'},
+			   {printf_float, 'f'}, {printf_string, 's'} };
+	int keyind = 0, notfirst = 0;
 
-    va_start(args, format);
+	ptr = format;
+	va_start(list, format);
+	while (format != NULL && *ptr)
+	{
+		if (key[keyind].spec == *ptr)
+		{
+			if (notfirst)
+				printf(", ");
+			notfirst = 1;
+			key[keyind].f(list);
+			ptr++;
+			keyind = -1;
+		}
+		keyind++;
+		ptr += keyind / 4;
+		keyind %= 4;
+	}
+	printf("\n");
 
-    while (format && format[i])
-    {
-        current_format = format[i];
-
-        if (current_format == 'c' || current_format == 'i' || current_format == 'f' || current_format == 's')
-        {
-            if (!first)
-            {
-                printf(", ");
-            }
-            first = 0;
-
-            switch (current_format)
-            {
-                case 'c':
-                    printf("%c", va_arg(args, int));
-                    break;
-                case 'i':
-                    printf("%d", va_arg(args, int));
-                    break;
-                case 'f':
-                    printf("%f", va_arg(args, double));
-                    break;
-                case 's':
-                    str = va_arg(args, char *);
-                    if (str == NULL)
-                        printf("(nil)");
-                    else
-                        printf("%s", str);
-                    break;
-            }
-        }
-        i++;
-    }
-
-    printf("\n");
-    va_end(args);
+	va_end(list);
 }

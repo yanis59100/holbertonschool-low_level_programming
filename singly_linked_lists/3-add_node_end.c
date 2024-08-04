@@ -1,40 +1,43 @@
-#include "lists.h"
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
+#include "lists.h"
 /**
- * add_node_end - add to end
- * @head: pointer to head
- * @str: input string
- * Return: the address of the new element, or NULL if it failed
- */
+ * *add_node_end - adds a new node at the end of a list_t list.
+ * @head: node guide
+ * @str: text input
+ * Return: list_t
+ **/
+
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t  *new, *ptr;
-	unsigned int len = 0;
+	list_t *temp;
+	list_t *count;
+	int sizeStr = 0;
 
-	new = malloc(sizeof(list_t));
-	if (new)
-	{
-		while (*(str + len))
-			len++;
-		new->str = strdup(str);
-		if (new->str)
-		{
-			new->len = len;
-			new->next = NULL;
-			if (!*head)
-			{
-				*head = new;
-				return (new);
-			}
-			ptr = *head;
-			while (ptr->next)
-				ptr = ptr->next;
-			ptr->next = new;
-			return (new);
-		}
-		free(new);
+	if (head == NULL || str == NULL)
 		return (NULL);
+
+	while (str[sizeStr])
+		sizeStr++;
+
+	count = malloc(sizeof(list_t));
+
+	if (count == NULL)
+		return (NULL);
+
+	count->str =  strdup(str);
+	count->len = sizeStr;
+
+	if (*head == NULL)
+	{
+		*head = count;
+		return (*head);
 	}
-	return (NULL);
+	temp = *head;
+
+	while (temp->next != NULL)
+		temp = temp->next;
+
+	temp->next = count;
+	return (count);
 }
